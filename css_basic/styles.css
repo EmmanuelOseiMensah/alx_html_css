@@ -27,4 +27,35 @@ aside {
   flex: 1;
   overflow-y: auto; /* makes aside scrollable */
   padding: 10px;
+  background-color: #f0f0f0;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+header li {
+    color: #333;
+}
+
+article {
+    background: rgb(219, 206, 206);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+article h1 {
+    color: #0a84ff;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }

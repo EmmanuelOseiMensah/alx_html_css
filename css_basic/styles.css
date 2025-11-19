@@ -1,0 +1,30 @@
+/* TASK 1 FLEXBOX LAYOUT — goes in styles.css */
+
+/* 1. <body> is a flex container arranged vertically */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* full viewport height */
+  margin: 0;
+}
+
+/* 2. <main> is a flex container arranged horizontally */
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto; /* allow main to grow and fill space */
+}
+
+/* 3. Article takes 2/3 of the width */
+article {
+  flex: 2;
+  overflow-y: auto; /* makes article scrollable */
+  padding: 10px;
+}
+
+/* 4. Aside takes 1/3 of the width */
+aside {
+  flex: 1;
+  overflow-y: auto; /* makes aside scrollable */
+  padding: 10px;
+}

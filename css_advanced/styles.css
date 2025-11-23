@@ -312,3 +312,30 @@ body {
 .section-title {
     text-align: center;
 }
+
+/* ===================================
+   8. FOOTER (Dark)
+   =================================== */
+.footer {
+    background-color: #071629;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.social-icons i {
+    font-size: 24px;
+    margin-left: 20px;
+    color: white;
+}
+
+.copyright {
+    font-size: 12px;
+    opacity: 0.5;
+}

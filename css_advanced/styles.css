@@ -62,7 +62,7 @@ body {
         /* The linear-gradient creates the dark overlay effect */
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
         /* The URL must match the source you specified */
-        url("images/background-image.jpg"); 
+        url("images/Object.png"); 
 
     background-size: cover;
     background-position: center;
@@ -122,4 +122,40 @@ body {
     width: 100px;                  /* Control image size (optional) */
     border-radius: 10px;
     border-radius: 50%;          /* Optional styling */
+}
+
+.subtitle-group {
+    justify-content: center; /* Center the subtitle group */
+    margin-top: 20px; /* Space between the subtitle and the cards */   
+    padding: 50px;
+}
+
+/* ===================================
+   4. QUOTE SECTION (Purple)
+   =================================== */
+.quote-section {
+    background-color: #C271FF;
+    padding: 80px 0;
+    color: white;
+}
+
+.quote-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.quote-img img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.quote-text blockquote {
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0 0 20px 0;
 }

@@ -1,0 +1,125 @@
+/* 1. Set Variables and Base Font */
+:root {
+    --primary-color: #9440D3; /* The distinctive purple color for the button */
+    --dark-bg: #071620; /* Dark background color */
+    --text-color-light: #ffffff;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--text-color-light); /* Default text color is white/light */
+    line-height: 1.5;
+    background-color: var(--dark-bg); /* Ensure sections not covered by the hero image are dark */
+    margin: 0; /* Remove default browser margin */
+}
+
+/* Container for Centering Content */
+.container {
+    max-width: 900px; /* Consistent content width from the PDF look */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 2. Style the Header and Navigation */
+
+/* Make the header content sit above the hero section */
+.header-nav {
+    position: relative; 
+    z-index: 10;
+}
+
+.nav-container {
+    display: flex; /* Use Flexbox to align logo and nav side-by-side */
+    justify-content: space-between; /* Pushes the logo to the left and links to the right */
+    align-items: center;
+    padding-top: 20px;
+}
+
+.nav-links {
+    list-style: none; /* Removes the bullet points */
+    display: flex; /* Puts the links side-by-side */
+    gap: 20px; /* Adds space between the links */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--text-color-light);
+    text-decoration: none; /* Removes the default underline from links */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+/* 3. Style the Hero Section */
+.hero {
+    /* Background Image: Use the uploaded file path and add a dark overlay */
+    background-image: 
+        /* The linear-gradient creates the dark overlay effect */
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+        /* The URL must match the source you specified */
+        url("images/background-image.jpg"); 
+
+    background-size: cover;
+    background-position: center;
+    /* This blends the image and the gradient to achieve the faded, monochromatic look */
+    background-blend-mode: multiply; 
+    
+    min-height: 800px;
+    padding-bottom: 100px;
+    /* Pull the hero up to cover the space left by the header for a full-bleed effect */
+    margin-top: -80px; 
+    padding-top: 100px; /* Add padding to push the content down */
+    text-align: center; /* Center the text content */
+}
+
+
+
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling the "REGISTER FOR FREE" Button */
+.btn-primary {
+    display: block; 
+    margin: 20px auto; 
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 20px; /* Makes the button edges rounded */
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+    opacity: 0.8; /* Simple hover effect */
+}
+
+.pros-grid {
+    display: flex;
+    justify-content: space-between; /* Even horizontal spacing */
+    align-items: center;            /* Align items vertically */
+    gap:100px;                      /* Space between cards */
+}
+
+.pro-card {
+    text-align: center;            /* Center text under images */
+}
+
+.pro-card img {
+    margin-top: 50px;
+    width: 100px;                  /* Control image size (optional) */
+    border-radius: 10px;
+    border-radius: 50%;          /* Optional styling */
+}

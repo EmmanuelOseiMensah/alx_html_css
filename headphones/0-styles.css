@@ -326,6 +326,42 @@ nav {
     color: #333;
 }
 
+/* --- Icon Sizing and Color --- */
+.holberton_school-icon-ic_sound {
+    font-size: 3em; 
+    color: #ff5a5f;
+    margin-bottom: 10px;
+    display: block; 
+    text-align: center;
+}
+
+/* --- Container Styling (For Layout) --- */
+.media-item {
+    text-align: center;
+    padding: 20px; 
+    max-width: 300px; 
+}
+
+/* --- Text Styling --- */
+.image-text {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #555; 
+}
+
+/* --- Grid/Flexbox Layout (For Parent Container) --- */
+/* This is crucial for arranging multiple media-items horizontally, 
+   similar to your "What we do..." section. */
+.media-container {
+    display: flex;
+    /* Wrap items onto the next line if screen is too small */
+    flex-wrap: wrap; 
+    /* Distribute space between items */
+    justify-content: space-around;
+    /* Add padding to the whole container */
+    padding: 20px 0; 
+}
+
 
 .pentagone-container {
     position: relative;

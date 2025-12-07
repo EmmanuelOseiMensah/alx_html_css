@@ -1,0 +1,652 @@
+/* ---------------------------------------------------- */
+/* Adding font styles                                   */
+/*-----------------------------------------------------*/
+@font-face{
+    font-family: "holberton_school-icon";
+    src: url(font/holberton_school-icon.woff) format("woff"),
+         url(font/holberton_school-icon.ttf) format("truetype"),
+         url(font/holberton_school-icon.svg#holberton_school-icon) format("svg");
+    font-weight: normal;
+}
+
+
+
+
+/* ---------------------------------------------------- */
+/* 0. GENERAL STYLES & RESET                            */
+/* ---------------------------------------------------- */
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "holberton_school-icon", sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ---------------------------------------------------- */
+/* 1. HEADER & NAVIGATION STYLING (Mobile-First)        */
+/* ---------------------------------------------------- */
+.headphoneup-image {
+    background-image: url('images/headphones_hero_1.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; /* Reduced padding for mobile screens */
+}
+
+
+.logo-container .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+
+/* Container for the hamburger icon */
+nav {
+    display: flex;
+    align-items: center;
+    /* On mobile, we only want the hamburger icon to show */
+    background-color: transparent;
+    padding: 0;
+}
+
+
+/* Hamburger Icon Styling */
+.ham-menu {
+    height: 30px;
+    width: 35px;
+    margin-left: auto;
+    position: relative;
+    z-index: 1000; /* High z-index to ensure clickability */
+    cursor: pointer;
+    display: block;
+}
+
+
+.ham-menu span {
+    height: 3px; /* Adjusted thickness */
+    width: 100%;
+    background-color: #fff; /* White lines for dark background */
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+
+/* Hamburger to X animation */
+.ham-menu.active span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+    top: 50%;
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg); /* Corrected rotation */
+    top: 50%;
+}
+
+
+/* Off-Screen Menu (Mobile View) */
+.off-screen-menu {
+    background-color: rgb(34, 37, 49);
+    height: 100vh;
+    width: 100%;
+    max-width: 650px;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially off-screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 999;
+    padding: 0;
+}
+
+
+.off-screen-menu.active {
+    right: 0; /* Slides into view */
+}
+
+
+/* Menu Links Styling */
+.off-screen-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+.off-screen-menu li a {
+    display: block;
+    padding: 20px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+
+.off-screen-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. HERO SECTION STYLING                              */
+/* ---------------------------------------------------- */
+
+
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.hero-text {
+    flex: 1;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 50px; /* Reduced margin for mobile */
+}
+
+
+.hero-section h1 {
+    font-size: 2.5rem; /* Reduced font size for mobile */
+    margin-bottom: 0.5rem;
+    color: white;
+    text-align:center;
+}
+
+
+.hero-image-placeholder {
+    display: none; /* Hide placeholder on mobile, or style as needed */
+}
+
+
+
+
+.subtitle {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+.explanation {
+    font-size: 1rem;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    white-space: pre-wrap;
+}
+
+
+/* ---------------------------------------------------- */
+/* 3. BUTTON & CTA STYLING                              */
+/* ---------------------------------------------------- */
+
+
+.btn-cta {
+    display: block;
+    margin: 30px auto 50px; /* Reduced vertical margin for mobile */
+    border: none;
+    padding: 15px 40px;
+    background-color: #e95b5b;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(179, 150, 159, 0.2);
+}
+
+
+.btn-cta:hover {
+    background-color: #e49090;
+}
+
+
+/* ---------------------------------------------------- */
+/* 4. FEATURE DETAIL SECTION                            */
+/* ---------------------------------------------------- */
+
+
+.feature-detail-section {
+    max-width: 800px;
+    margin: 50px auto; /* Reduced margin for mobile */
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #444;
+    padding: 0 20px;
+}
+
+
+.feature-detail-section p {
+    margin-bottom: 25px;
+}
+
+
+.media-container {
+    display: flex;
+    flex-direction: column; /* Stack columns on mobile */
+    gap: 30px;
+    padding: 0 20px;
+}
+
+
+.icon {
+    font-family: "holberton_school-icons";
+}
+
+
+.final-cta-section {
+    text-align: center;
+    margin-bottom: 50px;
+    height: auto; /* Adjusted height */
+}
+
+
+
+
+/* ---------------------------------------------------- */
+/* 5. RESULTS SECTION                                   */
+/* ---------------------------------------------------- */
+
+
+.results-section {
+    background-image: url(images/headphones_hero_2.jpg);
+    padding: 40px 20px;
+    text-align: center;
+}
+.results-grid {
+    display: flex;
+    flex-direction: column; /* Stack results vertically on mobile */
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+/* --- Icon Sizing and Color --- */
+.holberton_school-icon-ic_sound {
+    font-size: 3em; 
+    color: #ff5a5f;
+    margin-bottom: 10px;
+    display: block; 
+    text-align: center;
+}
+.holberton_school-icon-ic_video {
+    font-size: 3em; 
+    color: #ff5a5f;
+    margin-bottom: 10px;
+    display: block; 
+    text-align: center;
+}
+.holberton_school-icon-ic_video {
+    font-size: 3em; 
+    color: #ff5a5f;
+    margin-bottom: 10px;
+    display: block; 
+    text-align: center;
+}
+.holberton_school-icon-ic_music{
+    font-size: 3em; 
+    color: #ff5a5f;
+    margin-bottom: 10px;
+    display: block; 
+    text-align: center;
+}
+
+
+/* --- Container Styling (For Layout) --- */
+.media-item {
+    text-align: center;
+    padding: 20px; 
+    max-width: 300px; 
+}
+
+/* --- Text Styling --- */
+.image-text {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #555; 
+}
+
+/* --- Grid/Flexbox Layout (For Parent Container) --- */
+/* This is crucial for arranging multiple media-items horizontally, 
+   similar to your "What we do..." section. */
+.media-container {
+    display: flex;
+    /* Wrap items onto the next line if screen is too small */
+    flex-wrap: wrap; 
+    /* Distribute space between items */
+    justify-content: space-around;
+    /* Add padding to the whole container */
+    padding: 20px 0; 
+}
+
+
+.pentagone-container {
+    position: relative;
+    display: inline-block;
+}
+
+
+.pentagon-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+}
+
+
+.metric2 {
+    display: block;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-top: 50px;
+}
+
+
+.description {
+    font-size: 0.7em;
+    color: #ffffff;
+    margin: 0;
+    margin-top: 50px;
+}
+
+
+.result-icon {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.footer-text {
+    max-width: 100%;
+    white-space: pre-wrap;
+    margin-bottom: 50px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/*  CONTACT SECTION */
+/* --- Contact Section Styles --- */
+.contact-section {
+    padding: 80px 20px; /* Generous top/bottom padding for separation */
+    text-align: center;
+    background-color: #ffffff; /* White background */
+}
+
+.contact-section h2 {
+    color: #333333; /* Dark text for the heading */
+    margin-bottom: 40px; /* Space below the heading */
+}
+
+/* --- Contact Form Layout --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    /* Limit the width of the form for a clean desktop look */
+    max-width: 600px;
+    margin: 0 auto; /* Center the form horizontally */
+    gap: 20px; /* Space between form fields */
+    padding: 0 15px; /* Inner padding for smaller screens */
+}
+
+/* --- Form Field Styling (Input & Textarea) --- */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 15px 0; /* Padding inside the fields */
+    border: none;
+    border-bottom: 1px solid #ccc; /* Only a bottom line border */
+    font-size: 1em;
+    color: #333333;
+    background-color: transparent; /* Ensure the background is transparent/white */
+    outline: none; /* Remove default focus outline */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    /* Style for the placeholder text */
+    color: #999999;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow resizing only vertically */
+    min-height: 100px;
+}
+
+/* --- Call To Action Button (Reusing the existing style) --- */
+.cta-button {
+    background-color: #ff5a5f; /* Primary Red */
+    color: #ffffff;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-top: 10px; /* Space above the button */
+    font-weight: bold;
+    align-self: flex-start; /* Aligns to the left of the form */
+}
+
+/* Adjust button alignment to match the image (align-left within the centered form) */
+/* ---------------------------------- */
+/* --- Tablet Styles (min-width: 768px) --- */
+/* ---------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .contact-section {
+        /* Reduce vertical padding slightly for tablets */
+        padding: 60px 20px;
+    }
+
+    .contact-form {
+        /* Max width for the form can be slightly smaller */
+        max-width: 500px;
+    }
+    
+    .cta-button {
+        /* Center the button on tablets */
+        align-self: center;
+    }
+}
+
+/* ---------------------------------- */
+/* --- Mobile Styles (max-width: 767px) --- */
+/* ---------------------------------- */
+@media (max-width: 767px) {
+    
+    .contact-section {
+        /* Standard mobile padding */
+        padding: 40px 15px;
+    }
+
+    .contact-section h2 {
+        /* Reduce heading margin for mobile */
+        margin-bottom: 25px;
+    }
+    
+    .contact-form {
+        /* Allow the form to take up more width on small screens */
+        max-width: 100%;
+        gap: 15px; /* Less space between fields */
+    }
+    
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 12px 0;
+    }
+
+    .cta-button {
+        /* Ensure the button is full width or centered on mobile */
+        align-self: stretch; /* Stretch the button to the width of the form */
+        font-size: 0.9em;
+        padding: 12px;
+    }
+}
+/*========================================================= */
+/*               FOOTER SECTION                        */
+/* --- Base Footer Styles (Mobile First) --- */
+footer {
+    background-color: var(--dark-blue, #091223); /* Use dark blue background */
+    color: var(--text-light, #ffffff);
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stacked layout on mobile */
+    align-items: center; /* Center items horizontally */
+    text-align: center;
+}
+
+footer .logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-red, #ff5a5f);
+    margin-bottom: 15px; /* Space below logo */
+}
+
+.social-icons {
+    margin-bottom: 15px; /* Space below icons */
+}
+
+.social-icons a {
+    color: var(--text-light, #ffffff);
+    font-size: 1.2em;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-red, #ff5a5f);
+}
+
+.copyright {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* ---------------------------------- */
+/* --- Tablet Styles (min-width: 768px) --- */
+/* ---------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    footer {
+        padding: 30px 40px; /* Increase padding */
+        flex-direction: row; /* Layout items in a row */
+        justify-content: space-around; /* Distribute space evenly */
+        align-items: center;
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+
+    footer .logo {
+        margin-bottom: 0; /* Remove vertical margin */
+    }
+
+    .social-icons {
+        /* Move icons to the center */
+        order: 2; 
+        margin: 10px 0;
+    }
+    
+    .copyright {
+        /* Push copyright to the bottom center, spanning full width */
+        order: 3; 
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ---------------------------------- */
+/* --- Desktop Styles (min-width: 1024px) --- */
+/* ---------------------------------- */
+@media (min-width: 1024px) {
+    footer {
+        padding: 20px 80px; /* Wide padding for desktop */
+        flex-direction: row; /* Ensure row layout */
+        justify-content: space-between; /* Space logo/icons/copyright */
+        align-items: center;
+    }
+
+    footer .logo,
+    .social-icons,
+    .copyright {
+        /* Reset vertical stacking margins */
+        margin-bottom: 0;
+        /* Ensure items appear in the correct order */
+        order: initial; 
+        width: auto;
+    }
+}
